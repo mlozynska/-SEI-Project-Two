@@ -13,7 +13,7 @@ const AllPictures = () => {
   let startMonth = `${newDate.getMonth() + 1}`
     
   const getData = async () => {
-    const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=etjYr41gKjN2Wh8ThofDOj0HJI3i43FjgGX4lh0g&start_date=2021-${startMonth}-01&end_date=${endDate}`)
+    const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=dg5GyW52DZwLxZIT4MpUfvRa01eHvDU3sbgf94zE&start_date=2021-${startMonth}-01&end_date=${endDate}`)
     setStars(data)
   }
 
@@ -36,6 +36,22 @@ const AllPictures = () => {
     getData()
   }
 
+
+  let search = ''
+  const handleKeyUp = (event) => {
+    search = event.target.value
+    filterPics()
+  }
+
+  const  filterPics = () => {
+    const regexSearch = new RegExp(search, 'i')
+    const newSearch = stars.filter(star => {
+      return regexSearch.test(star.title)
+    })
+    setStars(newSearch)
+  }
+
+
   return (
     <>
       <div className='mt-6'></div>
@@ -51,6 +67,10 @@ const AllPictures = () => {
         <option value='02'>February</option>
         <option value='01'>January</option>
       </select>
+      <div>
+        <input placeholder='search' className='background-is-dark is medium mt-6 ml-6' onKeyUp={handleKeyUp}>
+        </input>
+      </div>
       <section className='section'>
         <div className='container'>
           <div className='columns is-multiline'>

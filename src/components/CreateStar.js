@@ -3,7 +3,6 @@ import React from 'react'
 
 const createStar = ({ star }) => {
 
-  console.log(star)
 
   return (
     <>
