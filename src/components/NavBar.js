@@ -5,7 +5,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className='navbar is-dark'>
+      <nav className='navbar is-black is-fixed-top'>
         <div className='container'>
           <div className='navbar-brand'>
             <span role='img' aria-label='logo' className='navbar-item '><Link to='/' className='has-text-white'>🪐  Home 🪐 </Link></span>

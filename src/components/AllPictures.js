@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
 
 const AllPictures = () => {
   const [stars, setStars] = useState([])
   const newDate = new Date()
+  const currentDay = `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`
   let endDate = `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`
-  let startDate = '10'
+  const currentMonth = `${newDate.getMonth() + 1}`
+  let startMonth = `${newDate.getMonth() + 1}`
     
   const getData = async () => {
-    const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=etjYr41gKjN2Wh8ThofDOj0HJI3i43FjgGX4lh0g&start_date=2021-${startDate}-01&end_date=${endDate}`)
+    const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=etjYr41gKjN2Wh8ThofDOj0HJI3i43FjgGX4lh0g&start_date=2021-${startMonth}-01&end_date=${endDate}`)
     setStars(data)
   }
 
@@ -24,14 +27,19 @@ const AllPictures = () => {
   }
 
   const handleChange = (event) => {
-    startDate = event.target.value
-    endDate = `${newDate.getFullYear()}-${startDate}-30`
+    startMonth = event.target.value
+    if (event.target.value === currentMonth) {
+      endDate = currentDay
+    } else {
+      endDate = `${newDate.getFullYear()}-${startMonth}-30`
+    }
     getData()
   }
 
   return (
     <>
-      <select onChange={handleChange} className='background-is-dark is medium'>
+      <div className='mt-6'></div>
+      <select onChange={handleChange} className='background-is-dark is medium mt-6 ml-6'>
         <option value='10'>October</option>
         <option value='09'>September</option>
         <option value='08'>August</option>
@@ -48,17 +56,19 @@ const AllPictures = () => {
           <div className='columns is-multiline'>
             {filteredStars().map(star => {
               return (
-                <div key={star._id} className='card column is-one-quarter-desktop is-one-third-tablet has-background-black'>
-                  <div className='card'>
-                    <div className='card-header'>
-                      <div className='card-header-title has-background-dark has-text-white'>{star.title}</div>
+                <div key={star.date} className='card column is-one-quarter-desktop is-one-third-tablet has-background-black'>
+                  <Link to={`/pictures/${star.date}`}>
+                    <div className='card'>
+                      <div className='card-header'>
+                        <div className='card-header-title has-background-dark has-text-white'>{star.title}</div>
+                      </div>
+                      <div className='card-image'>
+                        <figure className='image image-is-1by1 is-align-items-center'>
+                          <img src={star.url} alt={star.title}></img>
+                        </figure>
+                      </div>
                     </div>
-                    <div className='card-image'>
-                      <figure className='image image-is-1by1 is-align-items-center'>
-                        <img src={star.url} alt={star.title}></img>
-                      </figure>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               )
             }
