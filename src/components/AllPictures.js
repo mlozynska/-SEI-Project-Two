@@ -78,7 +78,7 @@ const AllPictures = () => {
           <div className='columns is-multiline'>
             {filteredStars().map(star => {
               return (
-                <div key={star.date} className='card column is-one-quarter-desktop is-one-third-tablet has-background-black'>
+                <div key={star.date} className='card column is-one-quarter-desktop is-one-third-tablet' id='allpicscard'>
                   <Link to={`/pictures/${star.date}`}>
                     <div className='card'>
                       <div className='card-header'>

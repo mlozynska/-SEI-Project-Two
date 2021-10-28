@@ -20,9 +20,9 @@
   height: 83px;
   width: 700px;
   border-radius: 15px;
-  opacity: 0.4;
-  background-color: #e8e8e8;
-  color: black;
+  opacity: 0.9;
+  background-color: #372a25d9;
+  color: #e8e8e8;
   font-size: 40px;
   font-weight: bold;
 }
@@ -116,7 +116,7 @@ hr {
 }
 
 #dateform {
-background-color: black;
+background-color: #0f0b09;
 opacity: 0.9;
 text-align: center;
 border-radius: 8px;
@@ -138,4 +138,9 @@ border-radius: 8px;
   margin: 50px 0 40px 0;
   font-size: 25px;
   background-color: darksalmon;
+}
+
+#allpicscard {
+  background-color: #121111;
+  opacity: 0.95;
 }
