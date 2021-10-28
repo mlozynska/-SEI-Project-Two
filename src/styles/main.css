@@ -1,0 +1,141 @@
+#hero {
+  height: 100vh;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/LDN1251Gualco1024.jpg'); */
+  
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/SunSpotHill_Coy_960.jpg'); */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/LucyLaunchB_Kraus_960.jpg'); */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/Mirach_NGC404ChumackHRweb1024c.jpg'); */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/NGC289Selby1024.jpg'); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/RubinsGalaxy_hst1024.jpg');
+
+
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+#homebutton {
+  margin-top: 225px;
+  padding: 20px 0;
+  height: 83px;
+  width: 700px;
+  border-radius: 15px;
+  opacity: 0.4;
+  background-color: #e8e8e8;
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#homecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  font-family: 'EB Garamond', serif;
+  color: #e8e8e8;
+}
+
+/* .hero-body {
+  padding-bottom: 0;
+} */
+#hometitle {
+  font-size: 100px;
+  opacity: 0.8;
+  color: #e8e8e8;
+  width: 700px;
+}
+
+#navbar {
+  height: 7%;
+  opacity: 0.7;
+}
+
+#navbarcontainer {
+  font-size: 20px;
+  color:#e8e8e8;
+}
+
+#allpictures {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/67p_m1_vdb47_1024.jpg');
+}
+
+#cardtitle {
+  color:#e8e8e8;
+}
+
+#buttons {
+  display:flex;
+  justify-content: center;
+  padding-top: 80px;
+
+}
+
+#selectbutton {
+  background-color: black;
+  color: #e8e8e8;
+  height: 35px;
+  width: 120px;
+  border-radius: 5px;
+  border: black;
+  font-size: 15px;
+  text-align: center;
+}
+
+#searchbutton {
+  background-color: black;
+  height: 35px;
+  width: 150px;
+  border-radius: 5px;
+  border: black;
+  font-size: 15px;
+  padding-left: 10px;
+}
+#createstar, h2, h4, hr {
+  color: #e8e8e8;
+}
+#createstar {
+  padding-top: 50px;
+}
+h2 {
+  font-size: 45px;
+}
+h4 {
+  font-size: 20px;
+}
+p {
+  font-size: 15px;
+}
+hr {
+  height:1px;
+}
+#pickdate {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/67p_m1_vdb47_1024.jpg');
+}
+
+#dateform {
+background-color: black;
+opacity: 0.9;
+text-align: center;
+border-radius: 8px;
+}
+#datelabel {
+  margin-top: 40px;
+  font-size: 25px;
+  color: #e8e8e8;
+}
+#dateinput {
+  margin-top: 20px;
+  padding: 10px 50px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color:#e8e8e8;
+}
+#datebutton {
+  margin: 50px 0 40px 0;
+  font-size: 25px;
+  background-color: darksalmon;
+}

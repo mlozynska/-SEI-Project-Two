@@ -53,25 +53,27 @@ const AllPictures = () => {
 
 
   return (
-    <>
-      <div className='mt-6'></div>
-      <select onChange={handleChange} className='background-is-dark is medium mt-6 ml-6'>
-        <option value='10'>October</option>
-        <option value='09'>September</option>
-        <option value='08'>August</option>
-        <option value='07'>July</option>
-        <option value='06'>June</option>
-        <option value='05'>May</option>
-        <option value='04'>April</option>
-        <option value='03'>March</option>
-        <option value='02'>February</option>
-        <option value='01'>January</option>
-      </select>
-      <div>
-        <input placeholder='search' className='background-is-dark is medium mt-6 ml-6' onKeyUp={handleKeyUp}>
-        </input>
+    <div className='is-fullheight is-black' id='allpictures'>
+      <div id='buttons'>
+        <select onChange={handleChange} className='background-is-dark is medium mt-6 ml-6' id='selectbutton'>
+          <option value='10'>October</option>
+          <option value='09'>September</option>
+          <option value='08'>August</option>
+          <option value='07'>July</option>
+          <option value='06'>June</option>
+          <option value='05'>May</option>
+          <option value='04'>April</option>
+          <option value='03'>March</option>
+          <option value='02'>February</option>
+          <option value='01'>January</option>
+        </select>
+        <div>
+          <input placeholder='Search...' className='background-is-dark is medium mt-6 ml-6' id='searchbutton' onKeyUp={handleKeyUp}>
+          </input>
+        </div>
       </div>
-      <section className='section'>
+      
+      <section className='section' id='allpics'>
         <div className='container'>
           <div className='columns is-multiline'>
             {filteredStars().map(star => {
@@ -80,10 +82,10 @@ const AllPictures = () => {
                   <Link to={`/pictures/${star.date}`}>
                     <div className='card'>
                       <div className='card-header'>
-                        <div className='card-header-title has-background-dark has-text-white'>{star.title}</div>
+                        <div className='card-header-title has-background-black is-centered' id='cardtitle'>{star.title}</div>
                       </div>
                       <div className='card-image'>
-                        <figure className='image image-is-1by1 is-align-items-center'>
+                        <figure className='image is-5by4'>
                           <img src={star.url} alt={star.title}></img>
                         </figure>
                       </div>
@@ -96,9 +98,10 @@ const AllPictures = () => {
           </div>
         </div> 
       </section>
-    </>
+    </div>
   )
 }
 
 
 export default AllPictures
+

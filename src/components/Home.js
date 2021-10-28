@@ -6,17 +6,15 @@ const Home = () => {
 
   return (
     <>
-      <section className='hero is-fullheight-with-navbar is-black'>
+      <section className='hero is-fullheight is-black' id='hero'>
         <div className='hero-body'>
-          <div className='container'>
-            <h1 className='title is-1 has-text-centered mb-6 pb-5	'>
-              <span className='logo-emoji' role='img' aria-label='logo'>🪐</span>
-                NASA Astromony Pictures
-              <span className='logo-emoji' role='img' aria-label='logo'>🪐</span>
+          <div className='container' id='homecontainer'>
+            <h1 className='title is-1 has-text-centered' id='hometitle'>
+                Astronomy Pictures
             </h1>
             <Link to='/picture-of-the-day' className='has-text-white'>
-              <button className='button is-dark is-large is-fullwidth is-rounded mt-6 py-5'>
-                NASA Picture of the Day
+              <button className='button is-dark is-large' id='homebutton'>
+                Picture of the Day
               </button>
             </Link>
           </div>
