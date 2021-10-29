@@ -12,9 +12,9 @@ const CreateStar = ({ star }) => {
             <div>
               {/* <h2 className='has-text-centered'>{star.title}</h2> */}
               {/* <hr /> */}
-              <div className='columns'>
+              <div className='columns is-align-items-center'>
                 <div className='column is-half'>
-                  <figure className='image is-4by3'>
+                  <figure className='image is-4by3 '>
                     <img src={star.url} alt={star.title}/>
                   </figure>
                 </div>

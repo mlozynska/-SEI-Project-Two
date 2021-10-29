@@ -58,8 +58,17 @@ body {
   color:#e8e8e8;
 }
 
-#allpictures {
+#allpictures, #allpics {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/67p_m1_vdb47_1024.jpg');
+}
+
+#loading {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/67p_m1_vdb47_1024.jpg');
+}
+
+#loading-text {
+  text-align: center;
+  color:#e8e8e8;
 }
 
 #cardtitle {
@@ -92,6 +101,7 @@ body {
   border: black;
   font-size: 15px;
   padding-left: 10px;
+  color: white;
 }
 #createstar, h2, h4, hr {
   color: #e8e8e8;
@@ -100,7 +110,7 @@ body {
   padding-top: 50px;
 }
 h2 {
-  font-size: 45px;
+  font-size: 50px;
 }
 h4 {
   font-size: 20px;

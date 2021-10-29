@@ -7,17 +7,23 @@ const ShowYourPicture = () => {
 
   const [yourStar, setYourStar] = useState([])
   const { yourdate } = useParams()
-  
+  const [hasError, setHasError] = useState(false)
 
 
   useEffect( () => {
-    const getData = async () => {
-      const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=etjYr41gKjN2Wh8ThofDOj0HJI3i43FjgGX4lh0g&date=${yourdate}`)
-      setYourStar(data)
+    try {
+      const getData = async () => {
+        const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=etjYr41gKjN2Wh8ThofDOj0HJI3i43FjgGX4lh0g&date=${yourdate}`)
+        setYourStar(data)
+      }
+      getData()
+    } catch (error) {
+      console.log(error.msg)
+      setHasError(true)
     }
-    getData()
   }, [])
-  console.log(yourStar)
+
+  console.log(hasError)
   return (
     <>
       { yourStar.media_type === 'image' ? 
@@ -27,7 +33,8 @@ const ShowYourPicture = () => {
           <div className='hero-body'>
             <div className='container'>
               <div>
-                <h2 className='title has-text-centered'>We are sorry, but there is no picture for this day.</h2>
+                <h2 className='title has-text-centered'>
+                  {yourStar.media_type === 'video' ? 'We are sorry, but there is no picture for this day.' : 'We are getting your picture...'}</h2>
                 <hr />
               </div>
             </div>
