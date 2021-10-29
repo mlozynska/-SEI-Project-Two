@@ -6,17 +6,20 @@ import { Link } from 'react-router-dom'
 
 const AllPictures = () => {
   const [stars, setStars] = useState([])
+  const [newStars, setNewStars] = useState([])
   const [hasError, setHasError] = useState(false)
   const newDate = new Date()
   const currentDay = `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`
   let endDate = `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`
   const currentMonth = `${newDate.getMonth() + 1}`
   let startMonth = `${newDate.getMonth() + 1}`
+  let search = ''
     
   const getData = async () => {
     try {
       const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=dg5GyW52DZwLxZIT4MpUfvRa01eHvDU3sbgf94zE&start_date=2021-${startMonth}-01&end_date=${endDate}`)
       setStars(data)
+      setNewStars(data)
     } catch (err) {
       setHasError(true)
     }
@@ -29,7 +32,7 @@ const AllPictures = () => {
   }, [])
   
   const filteredStars = () => {
-    return stars.filter((star)=> star.media_type === 'image')
+    return newStars.filter((star)=> star.media_type === 'image')
   }
 
   const handleChange = (event) => {
@@ -42,22 +45,21 @@ const AllPictures = () => {
     getData()
   }
 
-
-  let search = ''
+  const  filterPics = () => {
+    const regexSearch = new RegExp(search, 'i')
+    
+    const newSearch = stars.filter(star => {
+      return regexSearch.test(star.title)
+    })
+    setNewStars(newSearch)
+  }
+  
   const handleKeyUp = (event) => {
     search = event.target.value
     filterPics()
   }
 
-  const  filterPics = () => {
-    const regexSearch = new RegExp(search, 'i')
-    console.log(search)
-    const newSearch = stars.filter(star => {
-      return regexSearch.test(star.title)
-    })
-    setStars(newSearch)
-  }
-
+  
   return (
     <>
       <div className='is-fullheight is-black' id='allpictures'>
@@ -81,8 +83,8 @@ const AllPictures = () => {
         </div>
       </div>
       {stars.length > 0 ? 
-        <section className='section' id='allpics'>
-          <div className='container'>
+        <section className='section is-large' id='allpics'>
+          <div className='container' id='picturescontainer'>
             <div className='columns is-multiline'>
               {filteredStars().map(star => {
                 return (
