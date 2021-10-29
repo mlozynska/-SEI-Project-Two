@@ -9,7 +9,6 @@ const ChooseDate = () => {
 
   const handleChange = (event) => {
     setYourDate(event.target.value)
-    
   }
 
   const handleSubmit = async (event) => {

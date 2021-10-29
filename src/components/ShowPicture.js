@@ -17,7 +17,6 @@ const ShowPicture = () => {
 
   return (
     <CreateStar star={star}/>
-    
   )
 }
 
