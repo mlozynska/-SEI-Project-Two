@@ -65,6 +65,7 @@ const AllPictures = () => {
       <div className='is-fullheight is-black' id='allpictures'>
         <div id='buttons'>
           <select onChange={handleChange} className='background-is-dark is medium mt-6 ml-6' id='selectbutton'>
+            <option value='11'>November</option>
             <option value='10'>October</option>
             <option value='09'>September</option>
             <option value='08'>August</option>
