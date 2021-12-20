@@ -4,4 +4,4 @@ import 'bulma'
 import './styles/main.css'
 import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'))'bulma'
+ReactDOM.render(<App />, document.getElementById('root'))
