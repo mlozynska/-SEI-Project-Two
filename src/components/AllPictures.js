@@ -10,9 +10,9 @@ const AllPictures = () => {
   const [hasError, setHasError] = useState(false)
   const newDate = new Date()
   const currentDay = `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`
+  let startMonth = `${newDate.getMonth() + 1}`
   let endDate = `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`
   const currentMonth = `${newDate.getMonth() + 1}`
-  let startMonth = `${newDate.getMonth() + 1}`
   let search = ''
     
   const getData = async () => {
@@ -23,7 +23,6 @@ const AllPictures = () => {
     } catch (err) {
       setHasError(true)
     }
-    
   }
 
   useEffect(() => {
@@ -65,6 +64,7 @@ const AllPictures = () => {
       <div className='is-fullheight is-black' id='allpictures'>
         <div id='buttons'>
           <select onChange={handleChange} className='background-is-dark is medium mt-6 ml-6' id='selectbutton'>
+            <option value='12'>December</option>
             <option value='11'>November</option>
             <option value='10'>October</option>
             <option value='09'>September</option>
