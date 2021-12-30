@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 
 const ChooseDate = () => {
 
-  const [yourDate, setYourDate] = useState([])
+  const [yourdate, setYourDate] = useState([])
   const history = useHistory()
 
   const handleChange = (event) => {
@@ -13,7 +13,7 @@ const ChooseDate = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    history.push(`/choose-your-date/${yourDate}`)
+    history.push(`/choose-your-date/${yourdate}`)
   }
   
   return (
@@ -30,13 +30,13 @@ const ChooseDate = () => {
                       id='dateinput'
                       placeholder='YYYY-MM-DD' 
                       name='date'
-                      value={yourDate}
+                      value={yourdate}
                       onChange={handleChange}
                     />
                   </div>
                 </div>
                 <div className='field'>
-                  <Link to={`/choose-your-date/${yourDate}`}>
+                  <Link to={`/choose-your-date/${yourdate}`}>
                     <button type='submit' className='button is-fullwidth' id='datebutton'>Show me the Picture!</button>
                   </Link>
                 </div>
