@@ -1,5 +1,6 @@
 import React from 'react'
-import AllPictures from './components/AllPictures'
+import AllPictures2021 from './components/AllPictures2021'
+import AllPictures2022 from './components/AllPictures2022'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import PictureOfTheDay from './components/PictureOfTheDay'
@@ -14,7 +15,8 @@ const App = () => {
       <NavBar />
       <Switch>
         <Route exact path='/' component={Home}/>
-        <Route exact path='/pictures' component={AllPictures} />
+        <Route exact path='/pictures-2021/' component={AllPictures2021} />
+        <Route exact path='/pictures-2022/' component={AllPictures2022} />
         <Route exact path='/pictures/:date' component={ShowPicture}/>
         <Route exact path='/picture-of-the-day' component={PictureOfTheDay}/>
         <Route exact path='/choose-your-date' component={ChooseDate} />

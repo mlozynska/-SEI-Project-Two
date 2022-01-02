@@ -12,7 +12,10 @@ const NavBar = () => {
           </div>
           <div className='navbar-start'>
             <div className='navbar-item'>
-              <Link to='/pictures' className='has-text-white'>All Pictures</Link>
+              <Link to='/pictures-2021' className='has-text-white'>2021</Link>
+            </div>
+            <div className='navbar-item'>
+              <Link to='/pictures-2022' className='has-text-white'>2022</Link>
             </div>
           </div>
           <div className='navbar-end'>

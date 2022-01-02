@@ -4,20 +4,18 @@ import { Link } from 'react-router-dom'
 
 
 
-const AllPictures = () => {
+const AllPictures2021 = () => {
   const [stars, setStars] = useState([])
   const [newStars, setNewStars] = useState([])
   const [hasError, setHasError] = useState(false)
-  const newDate = new Date()
-  const currentDay = `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`
-  let startMonth = `${newDate.getMonth() + 1}`
-  let endDate = `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`
-  const currentMonth = `${newDate.getMonth() + 1}`
+  let startMonth = 1
+  let endMonth = 12
+  let day = 31
   let search = ''
     
   const getData = async () => {
     try {
-      const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=dg5GyW52DZwLxZIT4MpUfvRa01eHvDU3sbgf94zE&start_date=2021-${startMonth}-01&end_date=${endDate}`)
+      const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=dg5GyW52DZwLxZIT4MpUfvRa01eHvDU3sbgf94zE&start_date=2021-${startMonth}-01&end_date=2021-${endMonth}-${day}`)
       setStars(data)
       setNewStars(data)
     } catch (err) {
@@ -35,12 +33,22 @@ const AllPictures = () => {
   }
 
   const handleChange = (event) => {
-    startMonth = event.target.value
-    if (event.target.value === currentMonth) {
-      endDate = currentDay
+    if (event.target.value === '2021') {
+      startMonth = 1
+      endMonth = 12
+      day = 31
     } else {
-      endDate = `${newDate.getFullYear()}-${startMonth}-30`
+      startMonth = event.target.value
+      endMonth = event.target.value
+      if (startMonth === '04' || startMonth === '06' || startMonth === '09' || startMonth === '11') {
+        day = 30 
+      } else if (startMonth === '02') {
+        day = 28
+      } else {
+        day = 31
+      }
     }
+
     getData()
   }
 
@@ -64,6 +72,7 @@ const AllPictures = () => {
       <div className='is-fullheight is-black' id='allpictures'>
         <div id='buttons'>
           <select onChange={handleChange} className='background-is-dark is medium mt-6 ml-6' id='selectbutton'>
+            <option value='2021'>All 2021</option>
             <option value='12'>December</option>
             <option value='11'>November</option>
             <option value='10'>October</option>
@@ -127,5 +136,5 @@ const AllPictures = () => {
 }
 
 
-export default AllPictures
+export default AllPictures2021
 
