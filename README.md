@@ -52,6 +52,7 @@ We chose the NASA API, Astronomy Picture of a Day, that had great documentation 
 From the beginning, we decided that we would be pair-coding for the whole project so that each of us could have a say and a good understanding of all components. Twice a day, we took turns to code. As communication tools we used Slack and Zoom.
 We wanted to keep our application simple with just a few “pages”, so we could focus on it looking well-polished and the features working as intended.
 We decided that our application will have four main pages, which are Home, All Pictures, Show Picture and Picture of a Day. All Pictures page will render all pictures for the last month and by clicking on one of them users will be able to see more detailed information about the exact picture.
+
 To create wireframes for our application, we used Figma.
 
 ![](assets/images/wireFrames.png)
