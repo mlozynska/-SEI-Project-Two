@@ -47,42 +47,42 @@ Check our deployed version – Astronomy Pictures
 It took us a few hours to find an open API that we liked and wanted to use for our future project.
 We chose the NASA API, Astronomy Picture of a Day, that had great documentation and included images.
 
-![](asssets/images/API.png)
+![](assets/images/API.png)
 
 From the beginning, we decided that we would be pair-coding for the whole project so that each of us could have a say and a good understanding of all components. Twice a day, we took turns to code. As communication tools we used Slack and Zoom.
 We wanted to keep our application simple with just a few “pages”, so we could focus on it looking well-polished and the features working as intended.
 We decided that our application will have four main pages, which are Home, All Pictures, Show Picture and Picture of a Day. All Pictures page will render all pictures for the last month and by clicking on one of them users will be able to see more detailed information about the exact picture.
 To create wireframes for our application, we used Figma.
 
-![](asssets/images/wireFrames.png)
+![](assets/images/wireFrames.png)
 
 Also we planned to have additional features which were to include filtering by month, search by title, pick a date feature – users can pass down the special date for the picture using a form.
 
 The next stage was testing our API and making a get request to display data about our pictures, once we knew we could access certain endpoints on the API.
 
-![](asssets/images/getRequest.png)
+![](assets/images/getRequest.png)
 
 When we got all the pictures we decided to filter them by month. For that we created filter function:
 
-![](asssets/images/handleChange.png)
+![](assets/images/handleChange.png)
 
 After that we created a ChooseDate component. Where users can get a picture for a special date.
 
-![](asssets/images/dataInput.png)
+![](assets/images/dataInput.png)
 
 Next step was styling, we used Bulma with CSS for that.
 
-![](asssets/images/styling.png)
+![](assets/images/styling.png)
 
 ## Challenges
 
 - How to change the date inside our get request for AllPictures component. Due to the big size of each picture and time needed to download a big amount of pictures we decided to use this component only for the 2021 year. Users can choose a month or search by title to see pictures.
 - With the ChooseDate component we had to find out how the user should type the format of a chosen date to see the picture and also how to pass the date as a parameter to the ShowYourPicture component.
 
-![](asssets/images/dataChoose.png)
-![](asssets/images/dataChoose2.png)
-![](asssets/images/useParams.png)
-![](asssets/images/axios.png)
+![](assets/images/dataChoose.png)
+![](assets/images/dataChoose2.png)
+![](assets/images/useParams.png)
+![](assets/images/axios.png)
 
 ## Wins
 
