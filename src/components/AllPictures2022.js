@@ -11,11 +11,11 @@ const AllPictures2022 = () => {
     newDate.getMonth() + 1
   }-${newDate.getDate()}`
   let startMonth = `${newDate.getMonth() + 1}`
-  // let startMonth = '02'
   let endDate = `${newDate.getFullYear()}-${
     newDate.getMonth() + 1
   }-${newDate.getDate()}`
   const currentMonth = `${newDate.getMonth() + 1}`
+  let day = 31
   let search = ''
 
   const getData = async () => {
@@ -44,7 +44,19 @@ const AllPictures2022 = () => {
     if (event.target.value === currentMonth) {
       endDate = currentDay
     } else {
-      endDate = `${newDate.getFullYear()}-${startMonth}-31`
+      if (
+        startMonth === '4' ||
+        startMonth === '6' ||
+        startMonth === '9' ||
+        startMonth === '11'
+      ) {
+        day = 30
+      } else if (startMonth === '2') {
+        day = 28
+      } else {
+        day = 31
+      }
+      endDate = `${newDate.getFullYear()}-${startMonth}-${day}`
     }
     getData()
   }
@@ -72,8 +84,18 @@ const AllPictures2022 = () => {
             className="background-is-dark is medium mt-6 ml-6"
             id="selectbutton"
           >
-            <option value="02">February</option>
-            <option value="01">January</option>
+            {/* <option value="12">December</option>
+            <option value="11">November</option>
+            <option value="10">October</option>
+            <option value="9">September</option>
+            <option value="8">August</option>
+            <option value="7">July</option>
+            <option value="6">June</option>
+            <option value="5">May</option>
+            <option value="4">April</option>
+            <option value="3">March</option> */}
+            <option value="2">February</option>
+            <option value="1">January</option>
           </select>
           <div>
             <input
